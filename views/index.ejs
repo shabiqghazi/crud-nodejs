@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark bg-navbar p-3">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">CRUD APP</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="my-5">
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <div class="d-block">
+            <h1 class="h3 mb-4 text-center">User Management</h1>
+            <a href="#" class="btn btn-secondary"
+              ><i class="fa-solid fa-user-plus me-2"></i>Tambah</a
+            >
+            <table class="table mt-2" style="width: 650px">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Jenis Kelamin</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Shabiq Ghazi Arkaan</td>
+                  <td>Laki-laki</td>
+                  <td>Tidak Aktif</td>
+                  <td>
+                    <a href="#" class="btn btn-outline-success btn-sm me-1">
+                      <i class="fa-solid fa-fw fa-pencil"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-danger btn-sm">
+                      <i class="fa-solid fa-fw fa-trash-can"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
