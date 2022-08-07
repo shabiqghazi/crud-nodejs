@@ -12,13 +12,14 @@
   <div class="col-lg-4 col-md-5">
     <div class="d-block">
       <h1 class="h3 mb-4 text-center">Tambah User</h1>
-      <form action="">
+      <form action="/api/users" method="post">
         <div class="mb-3">
           <label for="nama" class="form-label">Nama</label>
           <input
             type="text"
             class="form-control"
             id="nama"
+            name="nama"
             placeholder="John Wick"
           />
         </div>
@@ -28,6 +29,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="name@example.com"
           />
         </div>

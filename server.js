@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const path = require("path");
 
 const router = require("./server/routes/router");
+const connectDB = require("./server/database/connection");
 
 const app = express();
 
@@ -15,6 +16,8 @@ const PORT = process.env.PORT;
 app.use(morgan("tiny"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+connectDB();
 
 app.set("view engine", "ejs");
 

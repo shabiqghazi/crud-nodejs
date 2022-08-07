@@ -18,12 +18,13 @@
         </tr>
       </thead>
       <tbody>
+        <% for(let i = 0; i < users.length; i++) { %>
         <tr>
-          <th scope="row">1</th>
-          <td>Shabiq Ghazi Arkaan</td>
-          <td>sgarkaan02@gmail.com</td>
-          <td>Laki-laki</td>
-          <td>Tidak Aktif</td>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= users[i].nama %></td>
+          <td><%= users[i].email %></td>
+          <td><%= users[i].jenisKelamin %></td>
+          <td><%= users[i].status %></td>
           <td>
             <a href="/update_user" class="btn btn-outline-success btn-sm me-1">
               <i class="fa-solid fa-fw fa-pencil"></i>
@@ -33,6 +34,7 @@
             </a>
           </td>
         </tr>
+        <% } %>
       </tbody>
     </table>
   </div>
