@@ -5,7 +5,6 @@ const { response } = require("express");
 dotenv.config({ path: "../../config.env" });
 
 module.exports.addUser = (req, res) => {
-  // console.log(req.body);
   const user = new usersModel({
     nama: req.body.nama,
     email: req.body.email,
@@ -21,7 +20,6 @@ module.exports.addUser = (req, res) => {
 };
 
 module.exports.findUser = (req, res) => {
-  console.log(req.query);
   if (req.query.id) {
     usersModel
       .findById(req.query.id)
