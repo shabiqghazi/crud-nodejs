@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const usersModel = require("../model/model");
 const dotenv = require("dotenv");
+const { response } = require("express");
 dotenv.config({ path: "../../config.env" });
 
 module.exports.addUser = (req, res) => {
@@ -39,7 +40,6 @@ module.exports.findUser = (req, res) => {
 };
 
 module.exports.updateUser = (req, res) => {
-  console.log(req.body);
   usersModel
     .findByIdAndUpdate(req.params.id, req.body)
     .then((response) => res.send({ message: "Data berhasil diubah" }))
@@ -47,5 +47,8 @@ module.exports.updateUser = (req, res) => {
 };
 
 module.exports.deleteUser = async (req, res) => {
-  res.send("hapus");
+  usersModel
+    .findByIdAndDelete(req.params.id)
+    .then((response) => res.send({ message: "Data berhasil dihapus" }))
+    .catch((err) => console.log(err));
 };
