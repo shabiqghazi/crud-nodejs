@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const usersModel = require("../model/model");
 const dotenv = require("dotenv");
-const { response } = require("express");
 dotenv.config({ path: "../../config.env" });
 
 module.exports.addUser = (req, res) => {
