@@ -4,8 +4,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const path = require("path");
-const session = require('express-session')
-const cookie = require('cookie-parser');
 
 const router = require("./server/routes/router");
 const connectDB = require("./server/database/connection");
@@ -14,16 +12,6 @@ const app = express();
 
 dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT;
-
-// session
-app.use(session({
-  secret: 's3cur3',
-  resave: false,
-  saveUninitialized: true
-}))
-
-//cookie
-app.use(cookie())
 
 app.use(morgan("tiny"));
 
@@ -41,9 +29,6 @@ app.use(
   express.static(path.resolve(__dirname, "node_modules/bootstrap/"))
 );
 
-app.get('/tesmiddleware', (req,res) => {
-  res.send(`Request Time : ${req.reqTime}`)
-})
 // Router
 app.use("/", router);
 
