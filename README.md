@@ -10,3 +10,4 @@ This app using this following dependencies:
 - dotenv
 - mongoose
 - axios
+- express-session
