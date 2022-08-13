@@ -20,6 +20,10 @@
       <nav class="navbar navbar-dark bg-navbar p-3">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">CRUD APP</span>
+          <span class="navbar-text"><%= (typeof loggedUser === 'undefined') ?  '' : loggedUser.email %></span>
+          <% if(typeof loggedUser !== 'undefined'){ %>
+          <span class="navbar-text"><a href="/api/logout">Logout</a></span>
+          <% } %>
         </div>
       </nav>
     </header>
