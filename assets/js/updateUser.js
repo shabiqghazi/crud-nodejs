@@ -29,5 +29,25 @@ document.getElementById("update_user").addEventListener("submit", function (e) {
     "Content-Type",
     "application/x-www-form-urlencoded;charset=UTF-8"
   );
+  xhttp.setRequestHeader(
+    "Authorization",
+    `Bearer ${getCookie('token')}`
+  );
   xhttp.send(formBody);
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 });

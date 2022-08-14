@@ -18,8 +18,8 @@ document.getElementById("add_user").addEventListener("submit", function (e) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.response)
-      // alert(JSON.parse(this.response).message);
-      // document.location.href = "/";
+      alert(JSON.parse(this.response).message);
+      document.location.href = "/";
     }
   };
 
