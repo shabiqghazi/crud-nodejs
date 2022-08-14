@@ -7,6 +7,9 @@ const checkAuthFailed = (req, res) => {
     res.redirect('/login')
   }
 }
+const getToken = (req) => {
+  return req.cookies.token
+}
 
 exports.homePage = async (req, res) => {
   checkAuthFailed(req,res)
@@ -15,10 +18,17 @@ exports.homePage = async (req, res) => {
     isLogin: req.session.isLogin
   }
   let users = [];
-  await axios(`${process.env.BASE_URL}api/users`)
-    .then((res) => (users = res.data))
+  await axios(`${process.env.BASE_URL}api/users`, 
+  {
+    headers: {
+      Authorization: `Bearer ${getToken(req)}`
+    }
+  })
+    .then((res) => {
+      users = res.data
+      })
     .catch((err) => console.log(err));
-
+  console.log(users)
   res.render("index", { users, loggedUser });
 };
 
@@ -34,6 +44,9 @@ exports.updateUser = async (req, res) => {
     params: {
       id: req.query.id,
     },
+    headers: {
+      Authorization: `Bearer ${getToken(req)}`
+    }
   })
     .then((res) => {
       user = res.data;

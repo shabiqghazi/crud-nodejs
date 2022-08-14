@@ -5,14 +5,19 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const path = require("path");
 const session = require("express-session")
+const cookie = require('cookie-parser')
 
 const router = require("./server/routes/router");
 const connectDB = require("./server/database/connection");
+const {verifyUser} = require('./server/controller/controller')
 
 const app = express();
 
 dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT;
+
+app.use(express.json())
+app.use(express.json())
 
 app.use(morgan("tiny"));
 
@@ -24,9 +29,10 @@ app.set("view engine", "ejs");
 
 app.use(session({
   secret: 'secret k3y',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
 }))
+app.use(cookie())
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/img", express.static(path.resolve(__dirname, "assets/img")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));

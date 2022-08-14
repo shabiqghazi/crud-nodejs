@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/_login 
+
+Content-Type: application/x-www-form-urlencoded
+email=shabiqghazi%40gmail.com&password=123456
+
+###
+GET http://localhost:3000/api/users
+Content-Type: application/json
+bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IlNoYWJpcSBHaGF6aSBBcmthYW4iLCJlbWFpbCI6InNoYWJpcWdoYXppQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ4NjA5NCwiZXhwIjoxNjYwNDg3ODk0fQ.OoUCKTsrF88BIvcfsrXTtIzP62JdUHX-zRT-oviaf7Q
