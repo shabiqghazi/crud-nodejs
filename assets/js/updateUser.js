@@ -2,8 +2,10 @@ document.getElementById("update_user").addEventListener("submit", function (e) {
   e.preventDefault();
   id = document.getElementById("id").value;
   nama = document.getElementById("nama").value;
+  fullName = document.getElementById("full-name").value;
   email = document.getElementById("email").value;
   alamat = document.getElementById("alamat").value;
+  tanggallahir = document.getElementById("tanggallahir").value;
   jenisKelamin = document.querySelector(
     "input[name='jenisKelamin']:checked"
   ).value;
@@ -30,6 +32,8 @@ document.getElementById("update_user").addEventListener("submit", function (e) {
     }
   };
   var data = []
+  var data2 = []
+  var data3 = []
 
   xhttp.open("PUT", `http://localhost:3000/api/users/${id}`, true);
   xhttp.setRequestHeader(
